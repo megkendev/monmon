@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class CombatManager : MonoBehaviour
 {
-    public static GameManager Instance { get ; private set; }
+    public static CombatManager Instance { get ; private set; }
     [SerializeField] private int turnNumber = 1;
     public bool isPlayerTurn = false;
     public Button nextTurnButton;
@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            print("There's more than one GameManager!" + transform + " - " + Instance);
+            print("There's more than one CombatManager!" + transform + " - " + Instance);
             Destroy(gameObject);
             return;
         }

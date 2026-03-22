@@ -47,6 +47,6 @@ public class MonMonAI : MonoBehaviour
         destinationSetter.target = null;
         destinationSetter.target = location[thisTurnLocation];
         print("moving to location " + thisTurnLocation.ToString());
-        GameManager.Instance.NextTurn();
+        CombatManager.Instance.NextTurn();
     }
 }
