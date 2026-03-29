@@ -6,7 +6,8 @@ public class CombatManager : MonoBehaviour
     public static CombatManager Instance { get ; private set; }
     [SerializeField] private int turnNumber = 1;
     public bool isPlayerTurn = false;
-    public Button nextTurnButton;
+    //public Button nextTurnButton;
+    public MonMonAI monMonAI;
 
     void Awake()
     {
@@ -21,7 +22,7 @@ public class CombatManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        nextTurnButton.onClick.AddListener(NextTurn);
+        monMonAI.InitializeState();
         NextTurn();
     }
 
@@ -44,7 +45,7 @@ public class CombatManager : MonoBehaviour
         else
         {
             print("it's the monmon's turn!");
-            MonMonAI.Instance.TakeTurn();
+            monMonAI.TakeTurn();
         }
     }
 }

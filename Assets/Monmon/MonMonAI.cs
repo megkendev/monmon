@@ -4,24 +4,12 @@ using UnityEngine.UI;
 
 public class MonMonAI : MonoBehaviour
 {
-    public static MonMonAI Instance { get ; private set; }
     FollowerEntity ai;
     AIDestinationSetter destinationSetter;
-    public Transform[] location;
-    [SerializeField] private float maxHp;
-    public float hp;
-    public Image hpObject;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
-    {
-        if (Instance != null)
-        {
-            print("There's more than one MonMonAI!" + transform + " - " + Instance);
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-    }
+    [SerializeField] protected Transform[] location;
+    [SerializeField] private float maxHp = 10;
+    [SerializeField] protected float hp;
+    [SerializeField] protected Image hpObject;
 
     void OnEnable()
     {
@@ -29,24 +17,35 @@ public class MonMonAI : MonoBehaviour
         destinationSetter = GetComponent<AIDestinationSetter>();
     }
 
-    void Start()
+    public void InitializeState()
     {
         hp = maxHp;
-        hpObject.fillAmount = hp/maxHp;
+        UpdateHP();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void TakeTurn()
+    public virtual void TakeTurn()
     {
         int thisTurnLocation = Random.Range(0, location.Length);
         destinationSetter.target = null;
         destinationSetter.target = location[thisTurnLocation];
         print("moving to location " + thisTurnLocation.ToString());
         CombatManager.Instance.NextTurn();
+    }
+
+    public float GetHP()
+    {
+        return hp;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        hp -= damage;
+        print("current hp is " + hp);
+        UpdateHP();
+    }
+
+    public void UpdateHP()
+    {
+        hpObject.fillAmount = hp/maxHp;
     }
 }
