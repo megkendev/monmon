@@ -8,6 +8,7 @@ public class CombatManager : MonoBehaviour
     public bool isPlayerTurn = false;
     //public Button nextTurnButton;
     public MonMonAI monMonAI;
+    public MonMon_Library monmonLibrary;
 
     void Awake()
     {

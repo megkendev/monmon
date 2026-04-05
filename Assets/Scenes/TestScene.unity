@@ -548,6 +548,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404077346}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &575047354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 575047357}
+  - component: {fileID: 575047356}
+  - component: {fileID: 575047355}
+  m_Layer: 0
+  m_Name: MonMon_InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &575047355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575047354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3f85cab48778e4996fc05adaf9ab27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonMon_Generator
+  monmonNature:
+  - TestNature1
+  - TestNature2
+  - TestNature3
+  natureInt: 0
+  monmonLoyalty:
+  - 1
+  - 2
+  - 3
+  loyaltyInt: 0
+--- !u!114 &575047356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575047354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e329de95cd94e64c92de6e149e5579f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonMon_InventoryManager
+  monMon_Library: {fileID: 11400000, guid: 18200b7b2e58dee4184f9d2d8aec929a, type: 2}
+  monMon_Generator: {fileID: 575047355}
+--- !u!4 &575047357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575047354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 49.22667, y: 0, z: 426.57663}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &594094599
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +829,7 @@ MonoBehaviour:
   maxHp: 10
   hp: 0
   hpObject: {fileID: 1911346522}
+  monmonID: Test
 --- !u!1 &662443315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2157,6 +2227,7 @@ MonoBehaviour:
   turnNumber: 1
   isPlayerTurn: 0
   monMonAI: {fileID: 594094607}
+  monmonLibrary: {fileID: 11400000, guid: 18200b7b2e58dee4184f9d2d8aec929a, type: 2}
 --- !u!4 &1080950934
 Transform:
   m_ObjectHideFlags: 0
@@ -3536,6 +3607,7 @@ SceneRoots:
   - {fileID: 732013578}
   - {fileID: 56591160}
   - {fileID: 1080950934}
+  - {fileID: 575047357}
   - {fileID: 1231442284}
   - {fileID: 889525031}
   - {fileID: 226715063}

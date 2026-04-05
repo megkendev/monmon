@@ -10,6 +10,7 @@ public class MonMonAI : MonoBehaviour
     [SerializeField] private float maxHp = 10;
     [SerializeField] protected float hp;
     [SerializeField] protected Image hpObject;
+    [SerializeField] protected string monmonID;
 
     void OnEnable()
     {
@@ -47,5 +48,10 @@ public class MonMonAI : MonoBehaviour
     public void UpdateHP()
     {
         hpObject.fillAmount = hp/maxHp;
+    }
+
+    public string GetMonmonID()
+    {
+        return monmonID;
     }
 }
